@@ -28,23 +28,23 @@
     + Click on the desired date of the calendar to write a memo.
     + Use the button at the top right to turn on/off the BGM.
     + Use the button at the top left to move to the weekly screen (second activity).
-      <img width="100%" scr="https://user-images.githubusercontent.com/67958557/148351766-0bb7fe3e-afe3-4f44-be00-dbb38c2d289c.jpg"/>
+    <img width="100%" scr="https://user-images.githubusercontent.com/67958557/148358737-89ae0fda-4eed-4b07-8ace-52eb4da21786.jpg"/>
 
   - **Second Activity**
     + Save/modify/delete function after inserting notes and icons by clicking the button below the desired day of the calendar.
     + Use the button at the top right to move to the daily screen (third activity).
     + Use the button at the top left to move to the monthly screen (first activity).
-      <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148352070-354072ed-b035-457c-9a7e-346c9e1b83f1.jpg"/>
+      <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358740-5b91e436-f321-4547-af52-7fa920247c5f.jpg"/>
 
   - **Thrid Activity**
     + Select one of daily memo, sticker selection, and image upload from the lower right menu.
     + Give the authority to use the camera and upload the captured image.
     + Save/Modify/Delete function after writing a daily memo (diary)
-      <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148352371-a39b6617-5e2e-4f8f-8290-c9d57cd7f4f0.jpg"/>
+      <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358741-e5661f23-3959-4973-bf25-2363e6e04374.jpg"/>
     
     + Use the button at the top right to move to the monthly screen (first activity).
     + Use the button at the top left to move to the weekly screen (second activity).
-      <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148352629-0fbc6343-f874-4980-a98a-b7b0453bb381.jpg"/>
+      <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358694-38c8ebbc-908d-4ece-ab48-5a5637eeb270.jpg"/>
  
 * Unimplemented function
   - **Second Activity**
@@ -57,35 +57,35 @@
 ## Functional description
 
 * Composition screen
-  <img width="80%" scr="https://user-images.githubusercontent.com/67958557/148354960-af30c4fb-10db-4529-b70f-5725e215b2d9.jpg"/>
+  <img width="80%" scr="https://user-images.githubusercontent.com/67958557/148358713-d14f0f8b-dc1d-408d-80b3-369503f90ef7.jpg"/>
 
 * Description of functions
   - On the first screen, a function that allows users to click on a calendar date to take notes on that date and save, modify, and delete them was implemented.
   - Press the music button at the top right to play the built-in BGM.
   - If you press the button with 7 on the top left, the calendar will go to Activity 2.
-  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148355306-f638beb1-a281-4b5e-9713-8357d0722ac9.jpg"/>
+  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358717-e6a04e2c-e87b-47f5-9a4f-0c514fd56c39.jpg"/>
   
   - On the first screen, press the music button at the top right to play the built-in BGM, but use Service to continue listening to the BGM at the end of the app.
-  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148355440-2198a1bc-c9c2-4211-87c8-7ae90a45dc1d.jpg"/>
+  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358721-342b96c1-bbcd-464c-985b-f8cd2f757e81.jpg"/>
   
   - On the second screen, a function was created to record, modify, and delete articles of the day by pressing the box below the day of the week.
   - Pressing the grid-patterned diary button at the top left leads to Activity 1.
   - Pressing the button with 1 on the top right leads to Activity 3.
-  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148355661-5beb3d13-f7d8-4af6-bd9f-21245a01bb13.jpg"/>
+  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358724-cc7ca769-d1b0-4109-a9e5-187ca09b602e.jpg"/>
   
   - Additionally, food-shaped stickers listed on the screen may be moved and decorated through drag.
-  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148355773-bce8761d-d364-42f8-9cec-77c890a5f224.jpg"/>
+  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358727-337a8f8a-a4ce-4ead-a92e-3941cabad873.jpg"/>
   
   - On the third screen, the ability to record, modify, and delete daily texts was created.
   - If the camera permission is not accepted when the screen first appears, the app will be shut down.
   - When you press Image View, you can insert or change a picture through camera shooting.
   - Pressing the button on the upper right leads to Activity 1, and pressing the button on the upper left leads to 2.
-  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148355926-2d8757c5-bf41-41e6-9661-9fe5d811d59e.jpg"/>
+  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358729-4822e9a1-6ae6-48a3-80b7-eb9ea32304d5.jpg"/>
   
   - Additionally, the menu function was implemented.
   - In the menu, you can select a bright background and a dark background, and when selecting a bright background,
     an existing white background and a dark gray background are selected.
-  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148356266-c5d83823-8808-4aa4-a1d7-68da6715e919.jpg"/>
+  <img width="60%" scr="https://user-images.githubusercontent.com/67958557/148358731-20fd4315-648d-40a2-b756-3010fcf288a1.jpg"/>
   
 ## Requirement Satisfaction
 
@@ -135,6 +135,7 @@
   
 ## Program Execution
   <iframe id="video" width="100%" src="https://user-images.githubusercontent.com/67958557/148353225-d67aa54f-fd06-4b3a-9d97-bf1fd37593dd.mp4" frameborder="0"></iframe>
+  <video width="100%" scr="https://user-images.githubusercontent.com/67958557/148353225-d67aa54f-fd06-4b3a-9d97-bf1fd37593dd.mp4"/>
 
 ##Conclusion
   - The development app "Food Cal" was satisfied with the requirements of the term project, but overall,
