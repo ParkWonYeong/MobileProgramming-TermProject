@@ -147,7 +147,7 @@
   
 https://user-images.githubusercontent.com/67958557/148358733-3ea054d2-a8b9-4183-92a3-13aab9ec09b1.mp4
 
-##Conclusion
+## Conclusion
   - The development app "Food Cal" was satisfied with the requirements of the term project, but overall,
     it seems to be insufficient as a general launch app.
   - It would be nice to study more about how to represent calendars weekly and daily.
