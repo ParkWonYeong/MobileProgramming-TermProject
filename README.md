@@ -1,5 +1,8 @@
 # MobileProgramming-TermProject
 
+This project is a small mobile app development project created by taking classes based on Kotlin in 2020.
+Please understand that there are many shortcomings.
+
 ## INDEX
 
 * Goals
