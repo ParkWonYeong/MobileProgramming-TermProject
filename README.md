@@ -153,229 +153,229 @@ Please understand that there are many shortcomings.
   ```
   
   - BGM on/off function.
-```
-        override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val intent=Intent(this,MusicService::class.java)
-```
+  ```
+          override fun onCreate(savedInstanceState: Bundle?) {
+          super.onCreate(savedInstanceState)
+          setContentView(R.layout.activity_main)
+          val intent=Intent(this,MusicService::class.java)
+  ```
 
-```
-        play_Btn.setOnClickListener{
-            if(play_Btn.isChecked == true){
-                play_Btn.setBackgroundResource(R.drawable.music)
-                startService(intent)
-            } else{
-                play_Btn.setBackgroundResource(R.drawable.pause)
-                stopService(intent)
-            }
-        }
-```
+  ```
+          play_Btn.setOnClickListener{
+              if(play_Btn.isChecked == true){
+                  play_Btn.setBackgroundResource(R.drawable.music)
+                  startService(intent)
+              } else{
+                  play_Btn.setBackgroundResource(R.drawable.pause)
+                  stopService(intent)
+              }
+          }
+  ```
   
   - The function of moving on to Activity 2.
-```
-        var btnNewActivity = findViewById<ImageButton>(R.id.btnNewActivity)
-        btnNewActivity.setOnClickListener{
-            var intent = Intent(applicationContext, SecondActivity::class.java)
-            startActivity(intent)
-        }
-```
+  ```
+          var btnNewActivity = findViewById<ImageButton>(R.id.btnNewActivity)
+          btnNewActivity.setOnClickListener{
+              var intent = Intent(applicationContext, SecondActivity::class.java)
+              startActivity(intent)
+          }
+  ```
   
 * Activity 2
   - The function of recording, modifying, and deleting articles of the day by pressing the box below the day of the week.
-```
-        var btnSun=findViewById<Button>(R.id.btnSun)
-        btnSun.setOnClickListener{
-            save_Btn2.visibility = View.VISIBLE 
-            contextEditText2.visibility = View.VISIBLE 
-            textView4.visibility = View.INVISIBLE 
-            cha_Btn2.visibility = View.INVISIBLE 
-            del_Btn2.visibility = View.INVISIBLE 
-            yoil_view.text = String.format("sunday") 
-            contextEditText2.setText("") 
-            checkedSunDay() 
-        }
-```
+  ```
+          var btnSun=findViewById<Button>(R.id.btnSun)
+          btnSun.setOnClickListener{
+              save_Btn2.visibility = View.VISIBLE 
+              contextEditText2.visibility = View.VISIBLE 
+              textView4.visibility = View.INVISIBLE 
+              cha_Btn2.visibility = View.INVISIBLE 
+              del_Btn2.visibility = View.INVISIBLE 
+              yoil_view.text = String.format("sunday") 
+              contextEditText2.setText("") 
+              checkedSunDay() 
+          }
+  ```
   
   - The function of moving food-shaped stickers on the screen through drag.
-```
-        var food1=findViewById<ImageView>(R.id.imageView)
-        food1.setOnTouchListener{ v,e ->
-            val pWidth=(v.parent as ViewGroup).width
-            val pHeight=(v.parent as ViewGroup).height
+  ```
+          var food1=findViewById<ImageView>(R.id.imageView)
+          food1.setOnTouchListener{ v,e ->
+              val pWidth=(v.parent as ViewGroup).width
+              val pHeight=(v.parent as ViewGroup).height
 
-            if (e.action == MotionEvent.ACTION_MOVE) {
-                v.x = v.x + e.x - v.width / 2
-                v.y = v.y + e.y - v.height / 2
-            } else if (e.action == MotionEvent.ACTION_UP) {
-                Log.d("bsjbsj", "detached...")
-                Log.d("bsjbsj", "v.x : ${v.x} + v.y : ${v.y} , " +
-                        "v.x + v.width : ${v.x + v.width}, v.y + y.width : ${v.y + v.width}")
-                if (v.x < 0) {
-                    v.x = 0F
-                } else if (v.x + v.width > pWidth) {
-                    v.x = (pWidth - v.width).toFloat()
-                }
-                if (v.y < 0) {
-                    v.y = 0F
-                } else if (v.y + v.height > pHeight) {
-                    v.y = (pHeight - v.height).toFloat()
-                }
-            }
-            true
-        }
-```        
+              if (e.action == MotionEvent.ACTION_MOVE) {
+                  v.x = v.x + e.x - v.width / 2
+                  v.y = v.y + e.y - v.height / 2
+              } else if (e.action == MotionEvent.ACTION_UP) {
+                  Log.d("bsjbsj", "detached...")
+                  Log.d("bsjbsj", "v.x : ${v.x} + v.y : ${v.y} , " +
+                          "v.x + v.width : ${v.x + v.width}, v.y + y.width : ${v.y + v.width}")
+                  if (v.x < 0) {
+                      v.x = 0F
+                  } else if (v.x + v.width > pWidth) {
+                      v.x = (pWidth - v.width).toFloat()
+                  }
+                  if (v.y < 0) {
+                      v.y = 0F
+                  } else if (v.y + v.height > pHeight) {
+                      v.y = (pHeight - v.height).toFloat()
+                  }
+              }
+              true
+          }
+  ```        
 
   - Ability to move on to activities 1 and 3.
-```
-        var btnFirst = findViewById<ImageButton>(R.id.btnFirst)
-        btnFirst.setOnClickListener{
-            var intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-        }
-        var btnThird = findViewById<ImageButton>(R.id.btnThird)
-        btnThird.setOnClickListener{
-            var intent = Intent(applicationContext, ThirdActivity::class.java)
-            startActivity(intent)
-        }
-```
+  ```
+          var btnFirst = findViewById<ImageButton>(R.id.btnFirst)
+          btnFirst.setOnClickListener{
+              var intent = Intent(applicationContext, MainActivity::class.java)
+              startActivity(intent)
+          }
+          var btnThird = findViewById<ImageButton>(R.id.btnThird)
+          btnThird.setOnClickListener{
+              var intent = Intent(applicationContext, ThirdActivity::class.java)
+              startActivity(intent)
+          }
+  ```
 
 * Activity 3
 
   - Recording, revising, and functioning for a day.
-```
-        checkedDaily()
+  ```
+          checkedDaily()
 
-        save_Btn3.setOnClickListener {
-            saveDay(fname)
-            Toast.makeText(this.getApplicationContext(), fname + "데이터를 저장했습니다.", Toast.LENGTH_SHORT)
-                .show()
-            str = contextEditText3.getText().toString()
-            textView5.text = "${str}" // textView에 str 출력
-            save_Btn3.visibility = View.INVISIBLE
-            cha_Btn3.visibility = View.VISIBLE
-            del_Btn3.visibility = View.VISIBLE
-            contextEditText3.visibility = View.INVISIBLE
-            textView5.visibility = View.VISIBLE
-        }
-```
+          save_Btn3.setOnClickListener {
+              saveDay(fname)
+              Toast.makeText(this.getApplicationContext(), fname + "데이터를 저장했습니다.", Toast.LENGTH_SHORT)
+                  .show()
+              str = contextEditText3.getText().toString()
+              textView5.text = "${str}" // textView에 str 출력
+              save_Btn3.visibility = View.INVISIBLE
+              cha_Btn3.visibility = View.VISIBLE
+              del_Btn3.visibility = View.VISIBLE
+              contextEditText3.visibility = View.INVISIBLE
+              textView5.visibility = View.VISIBLE
+          }
+  ```
 
   - If you don't accept camera permission, it's over.
-```
-        fun settingPermission(){
-        var permis = object : PermissionListener {
-            override fun onPermissionGranted() {
-                Toast.makeText(this@ThirdActivity, "권한 허가", Toast.LENGTH_SHORT)
-                    .show()
-            }
+  ```
+          fun settingPermission(){
+          var permis = object : PermissionListener {
+              override fun onPermissionGranted() {
+                  Toast.makeText(this@ThirdActivity, "권한 허가", Toast.LENGTH_SHORT)
+                      .show()
+              }
 
-            override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
-                Toast.makeText(this@ThirdActivity, "권한 거부", Toast.LENGTH_SHORT)
-                    .show()
-                ActivityCompat.finishAffinity(this@ThirdActivity)
-            }
-        }
-```
+              override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+                  Toast.makeText(this@ThirdActivity, "권한 거부", Toast.LENGTH_SHORT)
+                      .show()
+                  ActivityCompat.finishAffinity(this@ThirdActivity)
+              }
+          }
+  ```
 
   - If you press Image View, you can take pictures or change them.
-```
-        settingPermission()
+  ```
+          settingPermission()
 
-        var imageView = findViewById<ImageView>(R.id.img_picture)
+          var imageView = findViewById<ImageView>(R.id.img_picture)
 
-        imageView.setOnClickListener() {
-            startCapture()
-        }
-```
+          imageView.setOnClickListener() {
+              startCapture()
+          }
+  ```
 
-```
-    fun startCapture(){
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE) .also{takePictureIntent ->
-            takePictureIntent.resolveActivity(packageManager)?.also{
-                val photoFile: File?=try {
-                    createImageFile()
-                } catch(ex: IOException){
-                    null
-                }
-                photoFile?.also{
-                    val photoURI: Uri =FileProvider.getUriForFile(
-                        this,
-                        "com.wypark.term.fileprovider",
-                        it
-                    )
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,photoURI)
-                    startActivityForResult(takePictureIntent,REQUEST_IMAGE_CAPTURE)
+  ```
+      fun startCapture(){
+          Intent(MediaStore.ACTION_IMAGE_CAPTURE) .also{takePictureIntent ->
+              takePictureIntent.resolveActivity(packageManager)?.also{
+                  val photoFile: File?=try {
+                      createImageFile()
+                  } catch(ex: IOException){
+                      null
+                  }
+                  photoFile?.also{
+                      val photoURI: Uri =FileProvider.getUriForFile(
+                          this,
+                          "com.wypark.term.fileprovider",
+                          it
+                      )
+                      takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,photoURI)
+                      startActivityForResult(takePictureIntent,REQUEST_IMAGE_CAPTURE)
 
-                }
-            }
-        }
-    }
-```    
-  
+                  }
+              }
+          }
+      }
+  ```    
+
   - Choose a bright and dark background mode from the menu.
-```
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/afternoon"
-        android:title="밝은 배경" />
-    <item
-        android:id="@+id/evening"
-        android:title="어두운 배경" />
+  ```
+  <?xml version="1.0" encoding="utf-8"?>
+  <menu xmlns:android="http://schemas.android.com/apk/res/android">
+      <item
+          android:id="@+id/afternoon"
+          android:title="밝은 배경" />
+      <item
+          android:id="@+id/evening"
+          android:title="어두운 배경" />
 
-</menu>
-```
+  </menu>
+  ```
 
-```
-    override fun onCreateContextMenu(
-        menu: ContextMenu?,
-        v: View?,
-        menuInfo: ContextMenu.ContextMenuInfo?
-    ) {
-        super.onCreateContextMenu(menu, v, menuInfo)
+  ```
+      override fun onCreateContextMenu(
+          menu: ContextMenu?,
+          v: View?,
+          menuInfo: ContextMenu.ContextMenuInfo?
+      ) {
+          super.onCreateContextMenu(menu, v, menuInfo)
 
-        var mInflater = this.menuInflater
+          var mInflater = this.menuInflater
 
-        if(v==select){
-            menu!!.setHeaderTitle("화면 모드")
-            mInflater.inflate(R.menu.option_menu, menu)
-        }
-    }
-```
+          if(v==select){
+              menu!!.setHeaderTitle("화면 모드")
+              mInflater.inflate(R.menu.option_menu, menu)
+          }
+      }
+  ```
 
-```
-    override fun onContextItemSelected(item: MenuItem): Boolean {
-        super.onContextItemSelected(item)
+  ```
+      override fun onContextItemSelected(item: MenuItem): Boolean {
+          super.onContextItemSelected(item)
 
-        when(item.itemId){
-            R.id.afternoon -> {
-                baseLayout.setBackgroundColor(Color.WHITE)
-                topbar.setBackgroundColor(Color.TRANSPARENT)
-                return true
-            }
-            R.id.evening -> {
-                baseLayout.setBackgroundColor(Color.DKGRAY)
-                topbar.setBackgroundColor(Color.GRAY)
-                return true
-            }
-        }
-        return false
-    }
-```
+          when(item.itemId){
+              R.id.afternoon -> {
+                  baseLayout.setBackgroundColor(Color.WHITE)
+                  topbar.setBackgroundColor(Color.TRANSPARENT)
+                  return true
+              }
+              R.id.evening -> {
+                  baseLayout.setBackgroundColor(Color.DKGRAY)
+                  topbar.setBackgroundColor(Color.GRAY)
+                  return true
+              }
+          }
+          return false
+      }
+  ```
 
   - Ability to move on to activities 1 and 2.
-```
-        var btnWeek = findViewById<ImageButton>(R.id.btnWeek)
-        btnWeek.setOnClickListener{
-            var intent = Intent(applicationContext, SecondActivity::class.java)
-            startActivity(intent)
-        }
-        var btnReturn = findViewById<ImageButton>(R.id.btnReturn)
-        btnReturn.setOnClickListener{
-            var intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-        }
-```
+  ```
+          var btnWeek = findViewById<ImageButton>(R.id.btnWeek)
+          btnWeek.setOnClickListener{
+              var intent = Intent(applicationContext, SecondActivity::class.java)
+              startActivity(intent)
+          }
+          var btnReturn = findViewById<ImageButton>(R.id.btnReturn)
+          btnReturn.setOnClickListener{
+              var intent = Intent(applicationContext, MainActivity::class.java)
+              startActivity(intent)
+          }
+  ```
 
 ## Program Execution
   
